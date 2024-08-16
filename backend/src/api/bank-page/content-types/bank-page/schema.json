@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "bank_pages",
+  "info": {
+    "singularName": "bank-page",
+    "pluralName": "bank-pages",
+    "displayName": "Bank Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.banking-hero-section"
+      ]
+    }
+  }
+}
