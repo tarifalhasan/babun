@@ -362,30 +362,32 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBankPageBankPage extends Schema.SingleType {
-  collectionName: 'bank_pages';
+export interface ApiBankingPageBankingPage extends Schema.SingleType {
+  collectionName: 'banking_pages';
   info: {
-    singularName: 'bank-page';
-    pluralName: 'bank-pages';
-    displayName: 'Bank Page';
+    singularName: 'banking-page';
+    pluralName: 'banking-pages';
+    displayName: 'Banking Page';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    blocks: Attribute.DynamicZone<['layout.banking-hero-section']>;
+    blocks: Attribute.DynamicZone<
+      ['layout.banking-section-1', 'banking.banking-section-2']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::bank-page.bank-page',
+      'api::banking-page.banking-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::bank-page.bank-page',
+      'api::banking-page.banking-page',
       'oneToOne',
       'admin::user'
     > &
@@ -829,7 +831,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::bank-page.bank-page': ApiBankPageBankPage;
+      'api::banking-page.banking-page': ApiBankingPageBankingPage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "bank_pages",
+  "collectionName": "banking_pages",
   "info": {
-    "singularName": "bank-page",
-    "pluralName": "bank-pages",
-    "displayName": "Bank Page",
+    "singularName": "banking-page",
+    "pluralName": "banking-pages",
+    "displayName": "Banking Page",
     "description": ""
   },
   "options": {
@@ -15,7 +15,8 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "layout.banking-hero-section"
+        "layout.banking-section-1",
+        "banking.banking-section-2"
       ]
     }
   }

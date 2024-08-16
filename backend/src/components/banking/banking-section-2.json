@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_banking_banking_section_2s",
+  "info": {
+    "displayName": "Banking Section 2",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "ButtonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "Card": {
+      "displayName": "3 Item Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.3-item-card"
+    }
+  }
+}

@@ -84,4 +84,7 @@
   .sub-heading {
     @apply text-base xl:text-xl font-normal text-black/90;
   }
+  .heading {
+    @apply text-4xl xl:text-6xl font-bold;
+  }
 }

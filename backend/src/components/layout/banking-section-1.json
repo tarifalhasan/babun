@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_layout_banking_section_1s",
+  "info": {
+    "displayName": "Banking Section 1",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "total_country": {
+      "type": "string"
+    },
+    "active_users": {
+      "type": "string"
+    },
+    "ButtonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

@@ -1,9 +1,7 @@
 {
-  "collectionName": "components_components_buttons",
+  "collectionName": "components_components_links",
   "info": {
-    "displayName": "Button",
-    "icon": "feather",
-    "description": ""
+    "displayName": "Link"
   },
   "options": {},
   "attributes": {
@@ -13,12 +11,12 @@
     "href": {
       "type": "string"
     },
+    "variant": {
+      "type": "string"
+    },
     "isExternal": {
       "type": "boolean",
       "default": false
-    },
-    "variant": {
-      "type": "string"
     }
   }
 }

@@ -28,7 +28,8 @@ async function fetchData(url: string) {
 
 export async function getBankPageData() {
   noStore();
-  const url = new URL("/api/bank-page", baseUrl);
+
+  const url = new URL("/api/banking-page", baseUrl);
 
   url.search = qs.stringify({
     populate: {
@@ -37,19 +38,19 @@ export async function getBankPageData() {
           image: {
             fields: ["url", "alternativeText"],
           },
-
+          title: title,
           ButtonLink: {
             populate: {
               text: title,
             },
           },
-          //   Card: {
-          //     populate: {
-          //       image: {
-          //         fields: ["url", "alternativeText"],
-          //       },
-          //     },
-          //   },
+          Card: {
+            populate: {
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+            },
+          },
           //   ImageCard: {
           //     populate: {
           //       image: {

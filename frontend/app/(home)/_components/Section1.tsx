@@ -4,23 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface Section1Props {
-  heading: string;
-  subHeading: string;
-  total_users: string;
-  active_country: string;
+  title: string;
+  subTitle: string;
+  active_users: string;
+  total_country: string;
   ButtonLink: ButtonLink;
 }
 
 const Section1 = ({ data }: { data: Section1Props }) => {
-  console.dir(data, { depth: null });
   return (
-    <div className="container relative py-[5.5rem] flex gap-2 flex-col lg:flex-row">
+    <div className="container relative pt-[5.5rem] flex gap-2 flex-col lg:flex-row">
       <div className="flex-1 space-y-8">
         <div>
-          <h2 className="title-heading">{data.heading}</h2>
+          <h2 className="title-heading">{data.title}</h2>
         </div>
         <div>
-          <p className="sub-heading">{data.subHeading}</p>
+          <p className="sub-heading">{data.subTitle}</p>
         </div>
         <div>
           <Link href={data?.ButtonLink.href}>
@@ -45,7 +44,7 @@ const Section1 = ({ data }: { data: Section1Props }) => {
           </div>
           <div className=" ma">
             <p className="sub-heading">
-              <b>{data?.active_country}</b> countries using our service without
+              <b>{data?.total_country}</b> countries using our service without
               any hassle.
             </p>
           </div>
@@ -95,7 +94,7 @@ const Section1 = ({ data }: { data: Section1Props }) => {
               />
             </svg>
             <div>
-              <h2 className=" font-medium text-5xl">{data?.total_users}</h2>
+              <h2 className=" font-medium text-5xl">{data?.active_users}</h2>
               <h4 className="sub-heading text-black/50">Total Active user </h4>
             </div>
           </div>
