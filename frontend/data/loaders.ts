@@ -37,6 +37,12 @@ export async function getBankPageData() {
           image: {
             fields: ["url", "alternativeText"],
           },
+
+          ButtonLink: {
+            populate: {
+              text: title,
+            },
+          },
           //   Card: {
           //     populate: {
           //       image: {

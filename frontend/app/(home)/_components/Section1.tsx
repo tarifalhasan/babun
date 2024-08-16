@@ -1,21 +1,33 @@
 import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 
-const Section1 = ({ data }: { data: any }) => {
+interface Section1Props {
+  heading: string;
+  subHeading: string;
+  total_users: string;
+  active_country: string;
+  ButtonLink: ButtonLink;
+}
+
+const Section1 = ({ data }: { data: Section1Props }) => {
   console.dir(data, { depth: null });
   return (
-    <div className="container py-12 flex gap-2 flex-col lg:flex-row">
+    <div className="container relative py-[5.5rem] flex gap-2 flex-col lg:flex-row">
       <div className="flex-1 space-y-8">
         <div>
-          <h2 className="title-heading">All Banking Needs</h2>
+          <h2 className="title-heading">{data.heading}</h2>
         </div>
         <div>
-          <p className="sub-heading">
-            Digital agency with top rated talented people provide
-          </p>
+          <p className="sub-heading">{data.subHeading}</p>
         </div>
         <div>
-          <Button>Get Started</Button>
+          <Link href={data?.ButtonLink.href}>
+            <Button variant={data.ButtonLink.variant as any}>
+              {data?.ButtonLink.text}
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="flex-1">
@@ -33,7 +45,8 @@ const Section1 = ({ data }: { data: any }) => {
           </div>
           <div className=" ma">
             <p className="sub-heading">
-              <b>Over 90+</b> countries using our service without any hassle.
+              <b>{data?.active_country}</b> countries using our service without
+              any hassle.
             </p>
           </div>
           <div className=" gap-4 inline-flex items-center">
@@ -82,12 +95,13 @@ const Section1 = ({ data }: { data: any }) => {
               />
             </svg>
             <div>
-              <h2 className=" font-medium text-5xl">1.75m</h2>
+              <h2 className=" font-medium text-5xl">{data?.total_users}</h2>
               <h4 className="sub-heading text-black/50">Total Active user </h4>
             </div>
           </div>
         </div>
       </div>
+      <div className=" w-[642px] h-[642px] rounded-full bg-[#FFF2AC] absolute left-1/2 -translate-x-1/2 top-[10%] -translate-y-[10%] -z-10"></div>
     </div>
   );
 };
