@@ -47,7 +47,7 @@ const Section1 = ({ data }: { data: BankingSection1 }) => {
           <p className=" text-sm font-bold">{data.subTitle}</p>
           <Section1Form />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex pb-8 items-center justify-between">
           <div className=" -space-y-1">
             <h4 className=" text-2xl  font-bold text-[#043116]">
               {data.Clinets.total_clientfgfgf}

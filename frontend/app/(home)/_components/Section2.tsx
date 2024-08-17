@@ -41,8 +41,8 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
   const { title, subTitle, ButtonLink, Card } = data;
   return (
     <section className=" relative [background-size:100%_100%] bg-center bg-[#DCEFF0] bg-[url('/images/banking-section-2-bg.png')] py-12 xl:py-24">
-      <div className="container overflow-hidden gap-8 grid grid-cols-12">
-        <div className="col-span-12 flex flex-col justify-between xl:col-span-4">
+      <div className="container items-center overflow-hidden gap-8  flex flex-col lg:flex-row">
+        <div className=" basis-full xl:basis-[30%] ">
           <div className="space-y-8 ">
             <div>
               <h2 className="heading">{title}</h2>
@@ -57,39 +57,60 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
               </span>
             </button>
           </div>
-          <div>
-            <Image
-              src={"/images/line.png"}
-              alt="dfdfdfd"
-              width={238}
-              height={227}
-              className=" hidden -mb-10 lg:block"
-            />
-          </div>
         </div>
-        <div className=" col-span-12 xl:col-span-8 grid sm:grid-cols-2 gap-8">
-          {Card.map((item, index) => (
-            <div
-              className=" bg-white px-4 lg:px-8 py-9 space-y-5"
-              key={item.id}
-            >
-              <StrapiImage
-                alt={
-                  item.image.alternativeText
-                    ? item.image.alternativeText
-                    : "dfdfdfd"
-                }
-                className=" w-[66px] h-[50px]"
-                height={66}
-                src={item.image.url}
-                width={49}
-              />
-              <div>
-                <h3 className=" text-2xl font-bold">{item.title}</h3>
+        <div className=" basis-full gap-y-6 flex flex-col xl:basis-[70%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+            {Card.slice(0, 9).map((item, index) => (
+              <div
+                className="   bg-white px-4 lg:px-8 py-6 space-y-3"
+                key={item.id}
+              >
+                <StrapiImage
+                  alt={
+                    item.image.alternativeText
+                      ? item.image.alternativeText
+                      : "dfdfdfd"
+                  }
+                  className=" w-[66px] h-[50px]"
+                  height={66}
+                  src={item.image.url}
+                  width={49}
+                />
+                <div>
+                  <h3 className=" text-xl font-bold">{item.title}</h3>
+                </div>
+                <p className=" sub-heading text-base opacity-70">
+                  {item.description}
+                </p>
               </div>
-              <p className=" sub-heading opacity-70">{item.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2  gap-6 w-full">
+            {Card.slice(9).map((item, index) => (
+              <div
+                className="   flex gap-2 lg:flex-row flex-col lg:items-center bg-white px-4 lg:px-8 py-2 space-y-3"
+                key={item.id}
+              >
+                <StrapiImage
+                  alt={
+                    item.image.alternativeText
+                      ? item.image.alternativeText
+                      : "dfdfdfd"
+                  }
+                  className=" w-[66px] h-[50px]"
+                  height={66}
+                  src={item.image.url}
+                  width={49}
+                />
+                <div>
+                  <h3 className=" text-lg font-bold">{item.title}</h3>
+                </div>
+                <p className=" sub-heading text-base opacity-70">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
