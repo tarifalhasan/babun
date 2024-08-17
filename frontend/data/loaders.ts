@@ -38,6 +38,9 @@ export async function getBankPageData() {
           image: {
             fields: ["url", "alternativeText"],
           },
+          image2: {
+            fields: ["url", "alternativeText"],
+          },
           title: title,
           ButtonLink: {
             populate: {
@@ -49,6 +52,18 @@ export async function getBankPageData() {
               image: {
                 fields: ["url", "alternativeText"],
               },
+            },
+          },
+          Clinets: {
+            populate: {
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+            },
+          },
+          value: {
+            populate: {
+              title,
             },
           },
           //   ImageCard: {

@@ -1,6 +1,7 @@
 import { getBankPageData } from "@/data/loaders";
 import Section1 from "./_components/Section1";
 import Section2 from "./_components/Section2";
+import Section3 from "./_components/Section3";
 
 function blockRenderer(block: any) {
   switch (block.__component) {
@@ -8,6 +9,8 @@ function blockRenderer(block: any) {
       return <Section1 key={block.id} data={block} />;
     case "banking.banking-section-2":
       return <Section2 key={block.id} data={block} />;
+    case "banking.banking-section-3":
+      return <Section3 key={block.id} data={block} />;
     default:
       return null;
   }
@@ -16,7 +19,7 @@ function blockRenderer(block: any) {
 export default async function Home() {
   const strapiData = await getBankPageData();
 
-  console.dir(strapiData, { depth: null });
+  // console.dir(strapiData, { depth: null });
   const { blocks } = strapiData;
   if (!blocks) return <div>No blocks found</div>;
 

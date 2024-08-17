@@ -1,4 +1,6 @@
 import { StrapiImage } from "@/components/StrapiImage";
+import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa6";
 
 // Type for the ButtonLink
 interface ButtonLink {
@@ -38,20 +40,31 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
   // console.dir(data, { depth: null });
   const { title, subTitle, ButtonLink, Card } = data;
   return (
-    <section className=" bg-[#DCEFF0] py-12 xl:py-24">
-      <div className="container gap-8 grid grid-cols-12">
-        <div className="col-span-12 xl:col-span-4">
-          <div className="space-y-8">
+    <section className=" relative [background-size:100%_100%] bg-center bg-[#DCEFF0] bg-[url('/images/banking-section-2-bg.png')] py-12 xl:py-24">
+      <div className="container overflow-hidden gap-8 grid grid-cols-12">
+        <div className="col-span-12 flex flex-col justify-between xl:col-span-4">
+          <div className="space-y-8 ">
             <div>
               <h2 className="heading">{title}</h2>
             </div>
             <p className="sub-heading">{subTitle}</p>
-            <button className=" inline-flex items-center gap-2">
+            <button className=" inline-flex items-center gap-4">
               <span className="text-base sm:text-xl font-bold text-[#1F1F1F]">
                 {ButtonLink.text}
               </span>
-              <span className=" w-11 h-11 bg-black rounded-full inline-flex items-center justify-center"></span>
+              <span className=" w-11 h-11 bg-black rounded-full inline-flex items-center justify-center">
+                <FaArrowRight className=" text-3xl text-white" />
+              </span>
             </button>
+          </div>
+          <div>
+            <Image
+              src={"/images/line.png"}
+              alt="dfdfdfd"
+              width={238}
+              height={227}
+              className=" hidden -mb-10 lg:block"
+            />
           </div>
         </div>
         <div className=" col-span-12 xl:col-span-8 grid sm:grid-cols-2 gap-8">
