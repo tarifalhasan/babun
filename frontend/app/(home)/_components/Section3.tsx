@@ -20,7 +20,7 @@ const Section3 = ({ data }: { data: Props }) => {
   //   console.dir(data, { depth: null });
   const { description, user_role, username, image, value } = data;
   return (
-    <section className=" container py-8 lg:py-16">
+    <section className=" container py-8 lg:py-20">
       <div className="grid grid-cols-12">
         <div className="col-span-12 lg:col-span-4">
           <div className="inline-flex items-center gap-2">
