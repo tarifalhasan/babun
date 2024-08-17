@@ -2,6 +2,7 @@ import { getBankPageData } from "@/data/loaders";
 import Section1 from "./_components/Section1";
 import Section2 from "./_components/Section2";
 import Section3 from "./_components/Section3";
+import Section4 from "./_components/Section4";
 
 function blockRenderer(block: any) {
   switch (block.__component) {
@@ -11,6 +12,8 @@ function blockRenderer(block: any) {
       return <Section2 key={block.id} data={block} />;
     case "banking.banking-section-3":
       return <Section3 key={block.id} data={block} />;
+    case "banking.banking-section-4":
+      return <Section4 key={block.id} data={block} />;
     default:
       return null;
   }

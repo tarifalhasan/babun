@@ -1,6 +1,6 @@
 import { StrapiImage } from "@/components/StrapiImage";
+import ArrowButton from "@/components/arrow-button";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa6";
 
 // Type for the ButtonLink
 interface ButtonLink {
@@ -48,14 +48,8 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
               <h2 className="heading">{title}</h2>
             </div>
             <p className="sub-heading">{subTitle}</p>
-            <button className=" inline-flex items-center gap-4">
-              <span className="text-base sm:text-xl font-bold text-[#1F1F1F]">
-                {ButtonLink.text}
-              </span>
-              <span className=" w-11 h-11 bg-black rounded-full inline-flex items-center justify-center">
-                <FaArrowRight className=" text-3xl text-white" />
-              </span>
-            </button>
+
+            <ArrowButton text={ButtonLink.text} />
           </div>
         </div>
         <div className=" basis-full gap-y-6 flex flex-col xl:basis-[70%]">
