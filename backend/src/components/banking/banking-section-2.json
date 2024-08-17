@@ -11,7 +11,7 @@
       "type": "string"
     },
     "subTitle": {
-      "type": "string"
+      "type": "text"
     },
     "ButtonLink": {
       "type": "component",

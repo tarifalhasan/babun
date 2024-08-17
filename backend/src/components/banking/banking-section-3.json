@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_banking_banking_section_3s",
+  "info": {
+    "displayName": "Banking Section 3",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "username": {
+      "type": "string"
+    },
+    "user_role": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "value": {
+      "displayName": "values",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.values"
+    }
+  }
+}

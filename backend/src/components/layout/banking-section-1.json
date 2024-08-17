@@ -31,6 +31,18 @@
       "type": "component",
       "repeatable": false,
       "component": "components.link"
+    },
+    "Clinets": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.clients-banking"
+    },
+    "image2": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -16,7 +16,9 @@
       "type": "dynamiczone",
       "components": [
         "layout.banking-section-1",
-        "banking.banking-section-2"
+        "banking.banking-section-2",
+        "banking.banking-section-3",
+        "banking.banking-section-4"
       ]
     }
   }

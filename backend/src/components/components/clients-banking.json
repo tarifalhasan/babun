@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_clients_bankings",
+  "info": {
+    "displayName": "clients_banking"
+  },
+  "options": {},
+  "attributes": {
+    "total_clientfgfgf": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

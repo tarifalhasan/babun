@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_banking_banking_section_4s",
+  "info": {
+    "displayName": "Banking Section 4"
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "thubnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "list": {
+      "displayName": "list",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.list"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -34,7 +34,7 @@ const Section4 = ({ data }: { data: BankingSection4 }) => {
 
   //   console.log(data.list);
   return (
-    <section className="grid container pb-8 lg:pb-16 lg:grid-cols-2">
+    <section className="grid relative container pb-8 lg:pb-16 lg:grid-cols-2">
       <div className="">
         {isPlaying ? (
           <ReactPlayer
@@ -110,6 +110,31 @@ const Section4 = ({ data }: { data: BankingSection4 }) => {
         </ul>
         <div className=" pt-8">
           <ArrowButton text="More about us" />
+        </div>
+      </div>
+      <div className=" max-w-[300px]  absolute bottom-4 left-8 xl:-left-5 bg-white shadow-sm p-4 inline-flex items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="44"
+          height="45"
+          viewBox="0 0 44 45"
+          fill="none"
+        >
+          <ellipse cx="22" cy="22.327" rx="22" ry="22.3052" fill="#C2F6F9" />
+          <path
+            d="M13 24.2336L19.8 29.413L30.8888 14.6146"
+            stroke="black"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+        <div>
+          <h4 className=" text-xl font-medium">
+            Save up to 50% in Yearly plan.
+          </h4>
+          <button className="  opacity-40 uppercase !text-xs font-medium">
+            Learn MORE
+          </button>
         </div>
       </div>
     </section>
