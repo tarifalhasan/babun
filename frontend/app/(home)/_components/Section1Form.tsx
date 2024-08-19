@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Section1Form = () => {
   return (
@@ -14,9 +15,8 @@ const Section1Form = () => {
               NAME
             </label>
             <input
-              placeholder="First Name"
               type="text"
-              className=" w-full  outline-none border-0 focus:outline-none text-sm font-normal"
+              className=" placeholder:text-foreground bg-transparent w-full  outline-none border-0 focus:outline-none text-sm font-normal"
             />
           </div>
           <div className=" border relative overflow-hidden  px-4 p border-black rounded-[10px] h-14">
@@ -27,9 +27,8 @@ const Section1Form = () => {
               <span className=" w-1 h-1 rounded-full bg-black"></span> Last NAME
             </label>
             <input
-              placeholder="Last Name"
               type="text"
-              className=" w-full  outline-none border-0 focus:outline-none text-sm font-normal"
+              className=" placeholder:text-foreground bg-transparent w-full  outline-none border-0 focus:outline-none text-sm font-normal"
             />
           </div>
         </div>
@@ -43,9 +42,8 @@ const Section1Form = () => {
               ADDRESS
             </label>
             <input
-              placeholder="EMAIL ADDRESS"
               type="text"
-              className=" w-full  outline-none border-0 focus:outline-none text-sm font-normal"
+              className=" placeholder:text-foreground bg-transparent w-full  outline-none border-0 focus:outline-none text-sm font-normal"
             />
           </div>
           <div className=" col-span-12 sm:col-span-5 border relative overflow-hidden  px-4 p border-black rounded-[10px] h-14">
@@ -56,9 +54,8 @@ const Section1Form = () => {
               <span className=" w-1 h-1 rounded-full bg-black"></span> COMPANY
             </label>
             <input
-              placeholder="COMPANY"
               type="text"
-              className=" w-full  outline-none border-0 focus:outline-none text-sm font-normal"
+              className=" placeholder:text-foreground bg-transparent w-full  outline-none border-0 focus:outline-none text-sm font-normal"
             />
           </div>
         </div>
@@ -70,15 +67,14 @@ const Section1Form = () => {
             <span className=" w-1 h-1 rounded-full bg-black"></span> COUNTRY
           </label>
           <input
-            placeholder="COUNTRY"
             type="text"
-            className=" w-full  outline-none border-0 focus:outline-none text-sm font-normal"
+            className=" placeholder:text-foreground bg-transparent w-full  outline-none border-0 focus:outline-none text-sm font-normal"
           />
         </div>
       </div>
 
       <div className="flex  gap-1 py-4 items-start ">
-        <input type="checkbox" className=" w-4 h-4" name="terms" id="terms" />
+        <Checkbox id="terms" />
         <label
           htmlFor="terms"
           className="text-sm flex-1  font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"

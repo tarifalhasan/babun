@@ -31,6 +31,18 @@ export interface ComponentsValues extends Schema.Component {
   };
 }
 
+export interface ComponentsTestimonial extends Schema.Component {
+  collectionName: 'components_components_testimonials';
+  info: {
+    displayName: 'Testimonial';
+    icon: 'manyToMany';
+  };
+  attributes: {
+    title: Attribute.Text;
+    image: Attribute.Media<'images'>;
+  };
+}
+
 export interface ComponentsList extends Schema.Component {
   collectionName: 'components_components_lists';
   info: {
@@ -76,6 +88,32 @@ export interface Components3ItemCard extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     image: Attribute.Media<'images'>;
+  };
+}
+
+export interface BankingBottomCard extends Schema.Component {
+  collectionName: 'components_banking_bottom_cards';
+  info: {
+    displayName: 'Bottom Card';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface BankingBankingSection6 extends Schema.Component {
+  collectionName: 'components_banking_banking_section_6s';
+  info: {
+    displayName: 'Banking Section 6';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    left_image: Attribute.Media<'images'>;
+    right_image: Attribute.Media<'images'>;
+    BottomImageCard: Attribute.Component<'banking.bottom-card'>;
   };
 }
 
@@ -129,10 +167,13 @@ declare module '@strapi/types' {
     export interface Components {
       'layout.banking-section-1': LayoutBankingSection1;
       'components.values': ComponentsValues;
+      'components.testimonial': ComponentsTestimonial;
       'components.list': ComponentsList;
       'components.link': ComponentsLink;
       'components.clients-banking': ComponentsClientsBanking;
       'components.3-item-card': Components3ItemCard;
+      'banking.bottom-card': BankingBottomCard;
+      'banking.banking-section-6': BankingBankingSection6;
       'banking.banking-section-4': BankingBankingSection4;
       'banking.banking-section-3': BankingBankingSection3;
       'banking.banking-section-2': BankingBankingSection2;

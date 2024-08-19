@@ -37,7 +37,7 @@ const Section1 = ({ data }: { data: BankingSection1 }) => {
   const avatarUrls = data.Clinets.image.data.map((img) => img.url);
   // console.dir(avatarUrls);
   return (
-    <div className="container  lg:items-center relative pt-[.5rem] flex gap-2 flex-col lg:flex-row">
+    <section className="container  lg:items-center relative pt-[.5rem] flex gap-2 flex-col lg:flex-row">
       <div className="flex-1 max-w-[325px] space-y-6">
         <div>
           <h2 className="title-heading">{data.title}</h2>
@@ -139,7 +139,7 @@ const Section1 = ({ data }: { data: BankingSection1 }) => {
         width={742}
         height={669}
       />
-    </div>
+    </section>
   );
 };
 

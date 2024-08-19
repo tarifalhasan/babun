@@ -41,6 +41,21 @@ export async function getBankPageData() {
           image2: {
             fields: ["url", "alternativeText"],
           },
+          left_image: {
+            fields: ["url", "alternativeText"],
+          },
+          right_image: {
+            fields: ["url", "alternativeText"],
+          },
+          BottomImageCard: {
+            populate: {
+              title,
+              description: title,
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+            },
+          },
           thubnail: {
             fields: ["url", "alternativeText"],
           },

@@ -379,7 +379,8 @@ export interface ApiBankingPageBankingPage extends Schema.SingleType {
         'layout.banking-section-1',
         'banking.banking-section-2',
         'banking.banking-section-3',
-        'banking.banking-section-4'
+        'banking.banking-section-4',
+        'banking.banking-section-6'
       ]
     >;
     createdAt: Attribute.DateTime;
