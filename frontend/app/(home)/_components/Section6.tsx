@@ -26,7 +26,7 @@ type BankingSection6 = {
 const Section6 = ({ data }: { data: BankingSection6 }) => {
   // console.dir(data);
   return (
-    <div className="container py-10 xl:py-32">
+    <section id={data.__component} className="container py-10 xl:py-32">
       <div className=" pb-12">
         <h4 className="text-4xl xl:text-6xl font-bold max-w-[1157px]">
           {data.title}
@@ -74,7 +74,7 @@ const Section6 = ({ data }: { data: BankingSection6 }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -34,7 +34,10 @@ const Section4 = ({ data }: { data: BankingSection4 }) => {
 
   //   console.log(data.list);
   return (
-    <section className="grid relative container pb-8 lg:pb-16 lg:grid-cols-2">
+    <section
+      id={data.__component}
+      className="grid relative container pb-8 lg:pb-16 lg:grid-cols-2"
+    >
       <div className="">
         {isPlaying ? (
           <ReactPlayer

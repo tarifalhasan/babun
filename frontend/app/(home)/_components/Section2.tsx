@@ -38,9 +38,12 @@ interface BankingSection2 {
 
 const Section2 = ({ data }: { data: BankingSection2 }) => {
   // console.dir(data, { depth: null });
-  const { title, subTitle, ButtonLink, Card } = data;
+  const { title, subTitle, ButtonLink, Card, __component } = data;
   return (
-    <section className=" relative [background-size:100%_100%] bg-center bg-[#DCEFF0] bg-[url('/images/banking-section-2-bg.png')] py-12 xl:py-24">
+    <section
+      id={__component}
+      className=" relative [background-size:100%_100%] bg-center bg-[#DCEFF0] bg-[url('/images/banking-section-2-bg.png')] py-12 xl:py-24"
+    >
       <div className="container items-center overflow-hidden gap-8  flex flex-col lg:flex-row">
         <div className=" basis-full xl:basis-[30%] ">
           <div className="space-y-8 ">

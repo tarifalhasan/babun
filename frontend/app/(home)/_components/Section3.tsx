@@ -6,6 +6,7 @@ interface Value {
   value: string;
 }
 interface Props {
+  _component: string;
   description: string;
   username: string;
   user_role: string;
@@ -18,9 +19,9 @@ interface Props {
 }
 const Section3 = ({ data }: { data: Props }) => {
   //   console.dir(data, { depth: null });
-  const { description, user_role, username, image, value } = data;
+  const { description, user_role, username, image, value, _component } = data;
   return (
-    <section className=" container py-8 lg:py-20">
+    <section id={_component} className=" container py-8 lg:py-20">
       <div className="grid grid-cols-12">
         <div className="col-span-12 lg:col-span-4">
           <div className="inline-flex items-center gap-2">
