@@ -5,7 +5,6 @@ import AvatarCircles from "@/components/magicui/avatar-circles";
 import { ButtonLink } from "@/types";
 import Image from "next/image";
 import Section1Form from "./Section1Form";
-
 interface Image {
   id: number;
   url: string;
@@ -34,32 +33,43 @@ interface BankingSection1 {
 }
 
 const Section1 = ({ data }: { data: BankingSection1 }) => {
-  const avatarUrls = data.Clinets.image.data.map((img) => img.url);
+  const avatarUrls = data?.Clinets.image.data.map((img) => img.url);
   // console.dir(avatarUrls);
+
   return (
     <section
-      id={data.__component}
-      className="container  lg:items-center relative pt-[.5rem] flex gap-2 flex-col lg:flex-row"
+      id={data?.__component}
+      className="container  lg:items-center relative  py-16 lg:pt-[5.5rem] flex gap-2 flex-col lg:flex-row"
     >
+      <div className=" lg:hidden pb-6 relative">
+        <div className=" lg:hidden w-full h-[320px] bg-[#FFF2AC] rounded-full"></div>
+        <StrapiImage
+          className=" absolute   lg:hidden left-0 right-0     top-4 "
+          src={data?.image.url}
+          alt="dfdfdfd"
+          width={400}
+          height={500}
+        />
+      </div>
       <div className="flex-1 max-w-[325px] space-y-6">
         <div>
-          <h2 className="title-heading">{data.title}</h2>
+          <h2 className="title-heading font-timmaana">{data?.title}</h2>
         </div>
         <div>
-          <h3 className=" text-3xl font-medium">Join the waitlist</h3>
-          <p className=" text-sm font-bold">{data.subTitle}</p>
+          <h3 className=" text-4xl font-medium">Join the waitlist</h3>
+          <p className=" text-sm font-bold">{data?.subTitle}</p>
           <Section1Form />
         </div>
         <div className="flex pb-8 items-center justify-between">
           <div className=" -space-y-1">
             <h4 className=" text-2xl  font-bold text-[#043116]">
-              {data.Clinets.total_clientfgfgf}
+              {data?.Clinets.total_clientfgfgf}
             </h4>
             <p className=" text-[#373A3299]/60 font-normal text-sm">
               Worldwide clients
             </p>
           </div>
-          <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />
+          <AvatarCircles numPeople={99} avatarUrls={avatarUrls || []} />
         </div>
       </div>
       <div className="flex-1"></div>
@@ -67,13 +77,14 @@ const Section1 = ({ data }: { data: BankingSection1 }) => {
         <div className=" space-y-8 max-w-[306px]">
           <div>
             <StrapiImage
-              src={data.image2.url}
+              src={data?.image2.url}
               alt="dsfs"
-              width={380}
+              width={400}
+              className="]"
               height={270}
             />
           </div>
-          <div className=" ma">
+          <div className="">
             <p className="sub-heading">
               <b>{data?.total_country}</b> countries using our service without
               any hassle.
@@ -134,10 +145,10 @@ const Section1 = ({ data }: { data: BankingSection1 }) => {
           </div>
         </div>
       </div>
-      <div className=" w-[542px] h-[542px] rounded-full bg-[#FFF2AC] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-10"></div>
+      <div className="2xl:h-[542px] sm:w-[300px] sm:h-[300px] 2xl:w-[542px] hidden lg:block  rounded-full bg-[#FFF2AC] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-10"></div>
       <StrapiImage
-        className=" absolute -z-10  left-[40%] -translate-x-[40%] top-1/2 -translate-y-1/2"
-        src={data.image.url}
+        className=" absolute  hidden lg:block -z-10  left-[40%] -translate-x-[40%] top-1/2 -translate-y-1/2 max-w-[500px] xl:max-w-[730px]"
+        src={data?.image.url}
         alt="dfdfdfd"
         width={742}
         height={669}

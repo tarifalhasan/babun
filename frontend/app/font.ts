@@ -1,5 +1,11 @@
+import { Timmana } from "next/font/google";
 import localFont from "next/font/local";
 
+export const timmana = Timmana({
+  subsets: ["latin"],
+  variable: "--font-timmaana",
+  weight: ["400"],
+});
 export const satoshi = localFont({
   src: [
     {
@@ -23,4 +29,5 @@ export const satoshi = localFont({
       style: "normal",
     },
   ],
+  variable: "--font-satoshi",
 });

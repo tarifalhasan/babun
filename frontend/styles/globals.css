@@ -74,9 +74,10 @@
     -webkit-text-stroke-width: 1;
     -webkit-text-stroke-color: #000;
     font-family: Magnita;
-    @apply text-[40px] xl:text-[100px];
+    @apply text-6xl xl:text-8xl;
     font-style: normal;
     font-weight: 400;
+    mix-blend-mode: luminosity;
     line-height: 100%;
     letter-spacing: 1px;
   }

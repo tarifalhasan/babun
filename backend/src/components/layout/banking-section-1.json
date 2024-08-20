@@ -2,7 +2,7 @@
   "collectionName": "components_layout_banking_section_1s",
   "info": {
     "displayName": "Banking Section 1",
-    "icon": "crown",
+    "icon": "cup",
     "description": ""
   },
   "options": {},
@@ -38,11 +38,12 @@
       "component": "components.clients-banking"
     },
     "image2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

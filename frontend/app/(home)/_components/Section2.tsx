@@ -44,7 +44,7 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
       id={__component}
       className=" relative [background-size:100%_100%] bg-center bg-[#DCEFF0] bg-[url('/images/banking-section-2-bg.png')] py-12 xl:py-24"
     >
-      <div className="container items-center overflow-hidden gap-8  flex flex-col lg:flex-row">
+      <div className="container lg:max-w-[90%] 2xl:max-w-[1800px] items-center overflow-hidden gap-8  flex flex-col xl:flex-row">
         <div className=" basis-full xl:basis-[30%] ">
           <div className="space-y-8 ">
             <div>
@@ -56,8 +56,8 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
           </div>
         </div>
         <div className=" basis-full gap-y-6 flex flex-col xl:basis-[70%]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
-            {Card.slice(0, 9).map((item, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6 w-full">
+            {Card.slice(0, 12).map((item, index) => (
               <div
                 className="   bg-white px-4 lg:px-8 py-6 space-y-3"
                 key={item.id}
@@ -83,9 +83,9 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
             ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2  gap-6 w-full">
-            {Card.slice(9).map((item, index) => (
+            {Card.slice(12).map((item, index) => (
               <div
-                className="   flex gap-2 lg:flex-row flex-col lg:items-center bg-white px-4 lg:px-8 py-2 space-y-3"
+                className="flex gap-2 lg:flex-row flex-col lg:items-center bg-white px-4 lg:px-8 py-2 space-y-3"
                 key={item.id}
               >
                 <StrapiImage
@@ -107,6 +107,12 @@ const Section2 = ({ data }: { data: BankingSection2 }) => {
                 </p>
               </div>
             ))}
+            <div
+              className="flex gap-2 items-center justify-center text-xl
+             bg-white px-4 lg:px-8 font-bold py-2 space-y-3"
+            >
+              <p>AND MANY MORE</p>
+            </div>
           </div>
         </div>
       </div>

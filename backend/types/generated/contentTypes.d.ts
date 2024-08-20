@@ -376,11 +376,14 @@ export interface ApiBankingPageBankingPage extends Schema.SingleType {
   attributes: {
     blocks: Attribute.DynamicZone<
       [
-        'layout.banking-section-1',
         'banking.banking-section-2',
         'banking.banking-section-3',
         'banking.banking-section-4',
-        'banking.banking-section-6'
+        'banking.banking-section-6',
+        'banking.banking-section-7',
+        'layout.download-our-bank-mobile-app',
+        'layout.latest-news',
+        'layout.banking-section-1'
       ]
     >;
     createdAt: Attribute.DateTime;

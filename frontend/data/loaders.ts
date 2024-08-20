@@ -35,6 +35,16 @@ export async function getBankPageData() {
     populate: {
       blocks: {
         populate: {
+          news_cards: {
+            populate: {
+              title,
+              description: title,
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+            },
+          },
+
           image: {
             fields: ["url", "alternativeText"],
           },
@@ -47,6 +57,16 @@ export async function getBankPageData() {
           right_image: {
             fields: ["url", "alternativeText"],
           },
+          Google: {
+            populate: {
+              text: title,
+            },
+          },
+          AppStore: {
+            populate: {
+              text: title,
+            },
+          },
           BottomImageCard: {
             populate: {
               title,
@@ -56,6 +76,39 @@ export async function getBankPageData() {
               },
             },
           },
+          Features: {
+            populate: {
+              title,
+              href: title,
+            },
+            Google: {
+              populate: {
+                text: title,
+              },
+            },
+            AppStore: {
+              populate: {
+                text: title,
+              },
+            },
+          },
+          Testimonial: {
+            populate: {
+              title,
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+            },
+          },
+          Clients: {
+            populate: {
+              name: title,
+              logo: {
+                fields: ["url", "alternativeText"],
+              },
+            },
+          },
+
           thubnail: {
             fields: ["url", "alternativeText"],
           },

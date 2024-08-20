@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_layout_download_our_bank_mobile_app_s",
+  "info": {
+    "displayName": "Download our bank Mobile App."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.list"
+    },
+    "Google": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "AppStore": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    }
+  }
+}

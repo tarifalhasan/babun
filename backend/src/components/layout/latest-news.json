@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_latest_news",
+  "info": {
+    "displayName": "Latest News",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "news_cards": {
+      "displayName": "News Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.news-card"
+    }
+  }
+}

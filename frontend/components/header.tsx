@@ -3,6 +3,7 @@
 import Link from "next/link";
 import * as React from "react";
 
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 import {
@@ -14,6 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Menu } from "lucide-react";
 import { IoMdLock } from "react-icons/io";
 import { Logo } from "./icons";
 import { Button } from "./ui/button";
@@ -58,6 +60,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function MainHeader() {
   const [header, setHeader] = React.useState(false);
+  const [openMenu, setIsOpenMenu] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -78,69 +81,97 @@ export function MainHeader() {
   return (
     <header
       className={cn(
-        " hidden lg:flex py-5 z-50 h-[88px] items-center  justify-between    sticky left-0 right-0 top-0",
+        "  lg:flex py-5 z-50 h-[88px] items-center  justify-between    sticky left-0 right-0 top-0",
         header ? "backdrop-blur-sm bg-white/[0.8] " : ""
       )}
     >
       <div className=" container flex items-center justify-between">
         <div>
           <Link href={"/"}>
-            <Logo />
+            <Logo className=" max-w-[8rem]" />
           </Link>
         </div>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Home
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Blog
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Contact us
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-
-        <div className="inline-flex items-center gap-4">
-          <Button variant={"outline"} className=" gap-1">
-            <IoMdLock size={20} />
-            <span>Login</span>
-          </Button>
-          <Button>Get Started</Button>
+        <div className=" hidden lg:block">
+          <NavigationsLinks setIsOpenMenu={setIsOpenMenu} />
+        </div>
+        <div className=" hidden lg:block">
+          <AuthMenu />
+        </div>
+        <div className=" lg:hidden">
+          <Sheet open={openMenu} onOpenChange={setIsOpenMenu}>
+            <SheetTrigger asChild>
+              <button>
+                <Menu size={28} />
+              </button>
+            </SheetTrigger>
+            <SheetContent>
+              <NavigationsLinks setIsOpenMenu={setIsOpenMenu} />
+              <AuthMenu />
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
   );
 }
+
+const AuthMenu = () => (
+  <div className=" flex flex-col lg:flex-row lg:items-center gap-4">
+    <Button variant={"outline"} className=" gap-1">
+      <IoMdLock size={20} />
+      <span>Login</span>
+    </Button>
+    <Button>Get Started</Button>
+  </div>
+);
+interface NavigationsLinksProps {
+  setIsOpenMenu: (isOpen: boolean) => void;
+}
+const NavigationsLinks: React.FC<NavigationsLinksProps> = ({
+  setIsOpenMenu,
+}) => (
+  <NavigationMenu className=" w-full mx-auto lg:mx-0">
+    <NavigationMenuList className="flex-col lg:flex-row">
+      <NavigationMenuItem onClick={() => setIsOpenMenu(false)}>
+        <Link href="/" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Home
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+      <NavigationMenuItem onClick={() => setIsOpenMenu(false)}>
+        <Link href="/blogs" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Blog
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+      <NavigationMenuItem onClick={() => setIsOpenMenu(false)}>
+        <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
+        <NavigationMenuContent>
+          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            {components.map((component) => (
+              <ListItem
+                key={component.title}
+                title={component.title}
+                href={component.href}
+              >
+                {component.description}
+              </ListItem>
+            ))}
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+      <NavigationMenuItem onClick={() => setIsOpenMenu(false)}>
+        <Link href="/contact-us" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Contact us
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
+);
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_banking_banking_section_7s",
+  "info": {
+    "displayName": "Banking Section 7"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Testimonial": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.testimonial"
+    },
+    "Clients": {
+      "displayName": "Clients ",
+      "type": "component",
+      "repeatable": true,
+      "component": "banking.clients"
+    }
+  }
+}

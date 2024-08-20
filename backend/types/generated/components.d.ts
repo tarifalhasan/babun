@@ -1,10 +1,37 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface LayoutLatestNews extends Schema.Component {
+  collectionName: 'components_layout_latest_news';
+  info: {
+    displayName: 'Latest News';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    news_cards: Attribute.Component<'components.news-card', true>;
+  };
+}
+
+export interface LayoutDownloadOurBankMobileApp extends Schema.Component {
+  collectionName: 'components_layout_download_our_bank_mobile_app_s';
+  info: {
+    displayName: 'Download our bank Mobile App.';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media<'images'>;
+    Features: Attribute.Component<'components.list', true>;
+    Google: Attribute.Component<'components.link'>;
+    AppStore: Attribute.Component<'components.link', true>;
+  };
+}
+
 export interface LayoutBankingSection1 extends Schema.Component {
   collectionName: 'components_layout_banking_section_1s';
   info: {
     displayName: 'Banking Section 1';
-    icon: 'crown';
+    icon: 'cup';
     description: '';
   };
   attributes: {
@@ -39,6 +66,22 @@ export interface ComponentsTestimonial extends Schema.Component {
   };
   attributes: {
     title: Attribute.Text;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface ComponentsNewsCard extends Schema.Component {
+  collectionName: 'components_components_news_cards';
+  info: {
+    displayName: 'News Card';
+    icon: 'earth';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    author_name: Attribute.String;
+    date: Attribute.Date;
     image: Attribute.Media<'images'>;
   };
 }
@@ -91,6 +134,17 @@ export interface Components3ItemCard extends Schema.Component {
   };
 }
 
+export interface BankingClients extends Schema.Component {
+  collectionName: 'components_banking_clients_s';
+  info: {
+    displayName: 'Clients ';
+  };
+  attributes: {
+    name: Attribute.String;
+    logo: Attribute.Media<'images'>;
+  };
+}
+
 export interface BankingBottomCard extends Schema.Component {
   collectionName: 'components_banking_bottom_cards';
   info: {
@@ -100,6 +154,18 @@ export interface BankingBottomCard extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     image: Attribute.Media<'images'>;
+  };
+}
+
+export interface BankingBankingSection7 extends Schema.Component {
+  collectionName: 'components_banking_banking_section_7s';
+  info: {
+    displayName: 'Banking Section 7';
+  };
+  attributes: {
+    title: Attribute.String;
+    Testimonial: Attribute.Component<'components.testimonial', true>;
+    Clients: Attribute.Component<'banking.clients', true>;
   };
 }
 
@@ -165,14 +231,19 @@ export interface BankingBankingSection2 extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'layout.latest-news': LayoutLatestNews;
+      'layout.download-our-bank-mobile-app': LayoutDownloadOurBankMobileApp;
       'layout.banking-section-1': LayoutBankingSection1;
       'components.values': ComponentsValues;
       'components.testimonial': ComponentsTestimonial;
+      'components.news-card': ComponentsNewsCard;
       'components.list': ComponentsList;
       'components.link': ComponentsLink;
       'components.clients-banking': ComponentsClientsBanking;
       'components.3-item-card': Components3ItemCard;
+      'banking.clients': BankingClients;
       'banking.bottom-card': BankingBottomCard;
+      'banking.banking-section-7': BankingBankingSection7;
       'banking.banking-section-6': BankingBankingSection6;
       'banking.banking-section-4': BankingBankingSection4;
       'banking.banking-section-3': BankingBankingSection3;
