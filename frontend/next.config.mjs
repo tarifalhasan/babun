@@ -5,8 +5,18 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+        pathname: "/uploads/**/*",
+      },
+      {
         protocol: "https",
-        hostname: "phenomenal-benefit-8b1f696d69.strapiapp.com",
+        hostname: "placehold.co",
+      },
+      {
+        protocol: "https",
+        hostname: "phenomenal-benefit-8b1f696d69.media.strapiapp.com",
         pathname: "/**/*",
       },
     ],
