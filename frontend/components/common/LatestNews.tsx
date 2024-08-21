@@ -25,7 +25,7 @@ type LatestNews = {
 };
 
 const LatestNews = ({ data }: { data: LatestNews }) => {
-  console.dir(data, { depth: null });
+  // console.dir(data, { depth: null });
   return (
     <section
       id={data.__component}
