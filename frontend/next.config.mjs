@@ -17,7 +17,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "phenomenal-benefit-8b1f696d69.media.strapiapp.com",
-        pathname: "/**/*",
       },
     ],
   },
